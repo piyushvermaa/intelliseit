@@ -23,7 +23,7 @@ export const LogoTicker = () => {
       <div className="hidden sm:inline-flex absolute h-[375px] w-[750px] sm:w-[1536px] sm:h-[768px] lg:w-[2400px] lg:h-[1200px] rounded-[100%] bg-black left-1/2 -translate-x-1/2 border-[#B48CDE] radial-gradient-bg top-[calc(-96px)] sm:top-[calc(-120px)]"></div>
       <div className="container">
         <h2 className="text-xl text-center opacity-30">
-          Trusted by the world's most innovative teams
+          Trusted by the world&apos;s most innovative teams
         </h2>
         <div className="flex max-w-[1080px] mx-auto  relative mt-9 overflow-hidden">
           <div className="absolute inset-y-0 left-0 w-5 bg-gradient-to-r from-black to-transparent pointer-events-none"></div>
