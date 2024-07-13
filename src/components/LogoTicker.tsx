@@ -25,7 +25,7 @@ export const LogoTicker = () => {
         <h2 className="text-xl text-center opacity-30">
           Trusted by the world's most innovative teams
         </h2>
-        <div className="flex relative mt-9 overflow-hidden">
+        <div className="flex max-w-[1080px] mx-auto  relative mt-9 overflow-hidden">
           <div className="absolute inset-y-0 left-0 w-5 bg-gradient-to-r from-black to-transparent pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-5 bg-gradient-to-r from-transparent to-black pointer-events-none"></div>
           <motion.div 
@@ -33,7 +33,7 @@ export const LogoTicker = () => {
           animate={{translateX:"-50%"}}
           transition={{repeat:Infinity, duration:15, ease:"linear"}}
 
-           className="flex gap-16 pr-16 flex-none items-center justify-center overflow-x-auto">
+           className="flex gap-16 pr-16  flex-none items-center justify-center overflow-x-auto">
             {images.map(({ src, alt }, index) => (
               <Image
                 key={index}
