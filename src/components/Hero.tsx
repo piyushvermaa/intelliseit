@@ -1,8 +1,6 @@
 "use client"
 import Image from "next/image";
 import ArrowIcon from "../assets/icons/arrow-w.svg";
-import cursorImage from "../assets/images/cursor.png";
-import messageImage from "../assets/images/message.png";
 import cicon from "../assets/images/c.png";
 import cplusplus from "../assets/images/c++.png";
 import javaicon from "../assets/images/java.png";
@@ -137,7 +135,7 @@ export const Hero = () => {
               <TypingAnimation
                 className="text-xl  text-black dark:text-white"
                 text="Join Intellise today and master coding with our expert-led courses.
-              Whether you’re a beginner or a pro, we have something for everyone. 
+              Whether you&apos;re a beginner or a pro, we have something for everyone. 
               Start your journey towards coding excellence!"
               />
             </div>
