@@ -6,11 +6,7 @@ import { createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut } fr
 
 import { useRouter } from 'next/navigation';
 
-interface SignupCardProps {
-  onLoginClick: () => void; // Define type for onLoginClick prop
-}
-
-const SignupCard: React.FC<SignupCardProps> = ({ onLoginClick }) => {
+const SignupCard: any = () => {
   
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -146,7 +142,7 @@ const SignupCard: React.FC<SignupCardProps> = ({ onLoginClick }) => {
               </button>
               <p className="text-center text-white">
                 Already have an account?{' '}
-                <a href="#" className="text-indigo-600 font-medium inline-flex space-x-1 items-center" onClick={onLoginClick}>
+                <a href="#" className="text-indigo-600 font-medium inline-flex space-x-1 items-center" onClick={()=>router.push('/login')}>
                   <span>Login </span>
                   <span>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" onClick={()=>router.push('/login')}>
