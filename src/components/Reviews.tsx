@@ -5,37 +5,37 @@ const reviews = [
     {
       name: "Amit",
       username: "@amit",
-      body: "I've never seen anything like this before. The Intelliseit coding courses are amazing. I love it.",
+      body: "I&apos;ve never seen anything like this before. The Intelliseit coding courses are amazing. I love it.",
       img: "https://avatar.vercel.sh/amit",
     },
     {
       name: "Priya",
       username: "@priya",
-      body: "I don't know what to say. I'm speechless. The courses at Intelliseit are outstanding.",
+      body: "I don&apos;t know what to say. I&apos;m speechless. The courses at Intelliseit are outstanding.",
       img: "https://avatar.vercel.sh/priya",
     },
     {
       name: "Rahul",
       username: "@rahul",
-      body: "I'm at a loss for words. The Intelliseit coding courses are amazing. I love it.",
+      body: "I&apos;m at a loss for words. The Intelliseit coding courses are amazing. I love it.",
       img: "https://avatar.vercel.sh/rahul",
     },
     {
       name: "Sana",
       username: "@sana",
-      body: "The Intelliseit courses are fantastic. I've learned so much. Highly recommend it!",
+      body: "The Intelliseit courses are fantastic. I&apos;ve learned so much. Highly recommend it!",
       img: "https://avatar.vercel.sh/sana",
     },
     {
       name: "Anjali",
       username: "@anjali",
-      body: "I'm really impressed with the Intelliseit coding courses. They are thorough and very well explained.",
+      body: "I&apos;m really impressed with the Intelliseit coding courses. They are thorough and very well explained.",
       img: "https://avatar.vercel.sh/anjali",
     },
     {
       name: "Rohit",
       username: "@rohit",
-      body: "The coding courses at Intelliseit are the best I've ever taken. They are simply amazing.",
+      body: "The coding courses at Intelliseit are the best I&apos;ve ever taken. They are simply amazing.",
       img: "https://avatar.vercel.sh/rohit",
     },
   ];

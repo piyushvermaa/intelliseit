@@ -1,5 +1,3 @@
-
-
 export const FAQs = () => {
   return (
     <div className="bg-black flex flex-col justify-center items-center text-white/60 py-32 px-5">
@@ -25,7 +23,7 @@ export const FAQs = () => {
             </div>
           </details>
           <details>
-            <summary className="py-2 outline-none cursor-pointer focus:underline">Can I get a refund if I'm not satisfied with the course?</summary>
+            <summary className="py-2 outline-none cursor-pointer focus:underline">Can I get a refund if I&apos;m not satisfied with the course?</summary>
             <div className="px-4 pb-4">
               <p>Yes, we have a hassle-free refund policy. If you are not satisfied with the course, you can initiate a refund within 30 days of enrollment. Please contact our customer support at <a href="mailto:example@intelliseit.com" className="underline">example@intelliseit.com</a> for assistance.</p>
             </div>
