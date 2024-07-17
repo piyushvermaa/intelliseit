@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../assets/images/logosaas.png";
+import { useRouter } from 'next/navigation';
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,6 +11,8 @@ export const Navbar = () => {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+
+  const router = useRouter();
 
   return (
     <div className="bg-black">
@@ -66,7 +69,7 @@ export const Navbar = () => {
             >
               Help
             </a>
-            <button className="bg-white py-2 px-4 rounded-lg">Login</button>
+            <button className="bg-white py-2 px-4 rounded-lg" onClick={()=>router.push('/login')}>Login</button>
           </nav>
         </div>
         <div className={`sm:hidden ${menuOpen ? "block" : "hidden"}`}>
@@ -110,7 +113,7 @@ export const Navbar = () => {
               >
                 Help
               </a>
-              <button className="bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition">
+              <button className="bg-white text-black py-2 px-4 rounded-lg hover:bg-gray-200 transition" onClick={()=>{console.log('hi'); router.push('/login')}}>
                 Login
               </button>
             </div>
