@@ -9,6 +9,9 @@ import { CallToAction } from "@/components/CallToAction";
 import { Footer } from "@/components/Footer";
 import { Reviews } from "@/components/Reviews";
 import Courses from "@/components/Courses";
+import CoursePage from "@/components/CourseDesc";
+import Logincard from "@/components/LoginPage";
+import SignupCard from "@/components/SignupPage";
 
 export default function Home() {
   return (
@@ -24,6 +27,9 @@ export default function Home() {
       <FAQs />
       <CallToAction />
       <Footer />
+      <CoursePage/>
+      <Logincard/>
+      <SignupCard/>
     </>
   );
 }
