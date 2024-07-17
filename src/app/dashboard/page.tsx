@@ -1,18 +1,27 @@
 "use client"
 
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 import { useRouter } from 'next/navigation';
 
-export default function Home() {
+const Home:any = () => {
     
   const router = useRouter();
     const [loggedIn,setLoggedIn] = useState(false);
-    if(localStorage.getItem('login')) setLoggedIn(true);
-    else router.push('/login')
+    useEffect(() => {
+        
+        if (localStorage.getItem('login')) {
+          setLoggedIn(true);
+        } else {
+          router.push('/login');
+        }
+      }, [router]);
+      
   return (
     <>
      {loggedIn && <p>Hello this is dashboard</p>}
     </>
   );
 }
+
+export default Home;
