@@ -63,7 +63,7 @@ export const Features = () => {
   return (
     <div className="h-fit bg-black">
         <div className="text-center">
-          <h1 className="text-white sm:text-6xl text-3xl opacity-100">Our Services</h1>
+          <h1 className="text-white font-bold sm:text-6xl text-3xl opacity-100">Our Services</h1>
         </div>
         <div className="max-w-5xl mx-auto px-8">
       <HoverEffect items={services} />
