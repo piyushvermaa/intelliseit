@@ -14,6 +14,7 @@ import Logincard from "@/components/LoginPage";
 import SignupCard from "@/components/SignupPage";
 
 export default function Home() {
+
   return (
     <>
       <Banner />
@@ -28,8 +29,8 @@ export default function Home() {
       <CallToAction />
       <Footer />
       <CoursePage/>
-      <Logincard/>
-      <SignupCard/>
+      <Logincard onRegisterClick={() => {}}/>
+      <SignupCard onLoginClick={() => {}}/>
     </>
   );
 }
