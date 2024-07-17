@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image'; 
-import { auth } from "./firebaseConfig";
+import { auth } from '../../components/firebaseConfig';
 import { createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 import { useRouter } from 'next/navigation';
@@ -23,7 +23,7 @@ const Logincard: React.FC<LoginCardProps> = ({ onRegisterClick }) => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("Badhiya bhaiii")
-      
+      localStorage.setItem('login','true')
       router.push('/dashboard');
       return { success: true, user: userCredential.user };
     } catch (error:any) {
@@ -40,8 +40,7 @@ const Logincard: React.FC<LoginCardProps> = ({ onRegisterClick }) => {
 
   const handleRegister = () => {
     // Here you can implement your register logic
-    // console.log('Registering');
-    router.push('/signup');
+    console.log('Registering');
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -58,7 +57,7 @@ const Logincard: React.FC<LoginCardProps> = ({ onRegisterClick }) => {
   };
 
   return (
-    <div className="flex bg-black flex-wrap gap-10 items-center justify-center">
+    <div className="flex bg-black flex-wrap gap-10 items-center justify-center h-screen">
       <div className="max-w-lg my-10 p-6 backdrop-blur-lg rounded-3xl
           bg-gradient-to-br from-[#33333389] via-[#204a6897] to-transparent
           shadow-lg">
@@ -131,12 +130,12 @@ const Logincard: React.FC<LoginCardProps> = ({ onRegisterClick }) => {
               <button type='button' className="w-full group text-center py-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150 mb-5" onClick={handleGoogleLogin}>
                 <Image src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Logo" width={24} height={24} className="w-6 h-6" /> <span className='text-white group-hover:text-green-400'>Login with Google</span>
               </button>
-              <p className="text-center text-white" onClick={()=>router.push('/signup')}>
+              <p className="text-center text-white">
                 Not registered yet?{' '}
-                <a className="text-indigo-600 font-medium inline-flex space-x-1 items-center" onClick={()=>router.push('/signup')}>
-                  <span className='text-indigo-600' onClick={()=>router.push('/signup')}>Register now </span>
+                <a href="#" className="text-indigo-600 font-medium inline-flex space-x-1 items-center" onClick={()=>router.push('/signup')}>
+                  <span className='text-indigo-600' >Register now </span>
                   <span>
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" onClick={()=>router.push('/signup')}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" onClick={onRegisterClick}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </span>

@@ -30,8 +30,7 @@ export default function Home() {
       <CallToAction />
       <Footer />
       <CoursePage/>
-      <Logincard onRegisterClick={() => {}}/>
-      <SignupCard onLoginClick={() => {}}/>
+      
     </>
   );
 }
