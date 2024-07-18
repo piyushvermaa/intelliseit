@@ -5,6 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../assets/images/logosaas.png";
 import { useRouter } from 'next/navigation';
 
+
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 

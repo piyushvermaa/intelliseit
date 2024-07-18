@@ -1,16 +1,29 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Image from 'next/image'; 
-import { auth } from '../../components/firebaseConfig';
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { auth,provider } from '../../components/firebaseConfig';
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut ,signInWithPopup} from "firebase/auth";
 
 import { useRouter } from 'next/navigation';
 
 
 
 const Logincard: any = ({  }) => {
-  
+
   const router = useRouter();
+  
+  const [loggedIn,setLoggedIn] = useState(false);
+  useEffect(() => {
+        
+    if (localStorage.getItem('login')) {
+      setLoggedIn(true);
+      
+      router.push('/dashboard');
+    } else {
+      
+    }
+  }, [router]);
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -31,11 +44,19 @@ const Logincard: any = ({  }) => {
     }
   };
 
-  const handleGoogleLogin = () => {
-    // Here you can implement your Google login logic
-    console.log('Logging in with Google');
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log('Logged in with Google:', user);
+      localStorage.setItem('login', 'true');
+      router.push('/dashboard');
+    } catch (error) {
+      console.error('Error during Google sign-in:', error);
+      setError('Failed to log in with Google.');
+    }
   };
-
+  
   const handleRegister = () => {
     // Here you can implement your register logic
     console.log('Registering');

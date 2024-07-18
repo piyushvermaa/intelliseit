@@ -1,14 +1,28 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import Image from 'next/image'; 
-import { auth } from "../../components/firebaseConfig";
-import { createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { auth,provider } from "../../components/firebaseConfig";
+import { createUserWithEmailAndPassword,signInWithEmailAndPassword, signOut,GoogleAuthProvider,signInWithPopup } from "firebase/auth";
 
 import { useRouter } from 'next/navigation';
 
 const SignupCard: any = () => {
   
   const router = useRouter();
+  
+  const [loggedIn,setLoggedIn] = useState(false);
+  useEffect(() => {
+        
+    if (localStorage.getItem('login')) {
+      setLoggedIn(true);
+      
+      router.push('/dashboard');
+    } else {
+      
+    }
+  }, [router]);
+
+
   const [formData, setFormData] = useState({
     firstName: '',
     Username: '',
@@ -43,6 +57,19 @@ const SignupCard: any = () => {
     router.push('/login');
     console.log('Form submitted:', formData);
 
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+      console.log('Logged in with Google:', user);
+      localStorage.setItem('login', 'true');
+      router.push('/dashboard');
+    } catch (error) {
+      console.error('Error during Google sign-in:', error);
+      setError('Failed to log in with Google.');
+    }
   };
 
   return (
@@ -136,7 +163,7 @@ const SignupCard: any = () => {
                 <span>Signup</span>
               </button>
               <p className="text-center text-white">------------- or -------------</p>
-              <button type='button' className="w-full group text-center py-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150 mb-5">
+              <button type='button' className="w-full group text-center py-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150 mb-5" onClick={()=>{handleGoogleLogin()}}>
                 <Image src="https://www.svgrepo.com/show/355037/google.svg" alt="Google Logo" width={24} height={24} className="w-6 h-6" />{' '}
                 <span className='text-white group-hover:text-green-400'>Login with Google</span>
               </button>
